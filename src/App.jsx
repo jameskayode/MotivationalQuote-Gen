@@ -13,7 +13,8 @@ const App = () => {
   const fetchAdvice = () => {
     setLoading(true);
 
-    axios.get('https://api.adviceslip.com/advice')
+    axios.get('https://api.adviceslip.com/advice?_cache=' + Date.now())
+
       .then((response) => {
         const { advice } = response.data.slip;
         setAdvice(advice);
